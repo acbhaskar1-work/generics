@@ -1,5 +1,4 @@
 package com.chitkara.generics;
 
-public class User {
-
+public class User{
 }
