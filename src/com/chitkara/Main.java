@@ -8,7 +8,7 @@ import com.chitkara.generics.User;
 public class Main {
     public static void main(String[] args) {
         var names = new ApiResponse<String>();
-        names.response(true,"Invoice");
+        names.response(0,true,"Invoice");
         System.out.println(names.getData());
     }
 }

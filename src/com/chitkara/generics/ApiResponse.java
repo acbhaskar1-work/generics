@@ -1,19 +1,19 @@
 package com.chitkara.generics;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.TreeMap;
 
 public class ApiResponse<T> {
-    private boolean success;
-    private T data;
-    private ArrayList<String> items = new ArrayList<>();
 
-    public void response(boolean success, T data){
-        this.success = success;
-        this.data = data;
+    public TreeMap<Integer, TreeMap<Boolean, T>> items = new TreeMap<>();
+
+
+    public void response(int index, boolean success, T data){
+    TreeMap<Boolean, T> item = new TreeMap<>();
+    item.put(success,data);
+    items.put(index,item);
     }
-    public T getData(){
-        return this.data;
+    public TreeMap getData(){
+        return items;
     }
 
 }
