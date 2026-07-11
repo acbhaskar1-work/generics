@@ -1,4 +1,4 @@
-Advanced Enterprise Example
+```Advanced Enterprise Example
 
 Imagine an enterprise payroll application.
 
@@ -221,3 +221,4 @@ Supports concurrent scanning and resumable synchronization.
 Key Takeaways
 
 The File class is a pathname abstraction, not a file stream or file contents. It lets Java applications describe and query filesystem objects in a platform-independent way, but it has limitations that led to the introduction of the more powerful Path and Files APIs in Java NIO.2.
+```
