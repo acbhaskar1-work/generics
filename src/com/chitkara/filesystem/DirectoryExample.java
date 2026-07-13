@@ -2,17 +2,35 @@ package com.chitkara.filesystem;
 
 
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class DirectoryExample {
 
     public static void main(String[] args) {
+        FileReader reader = null;
+        try {
+            File directory = new File("Reports");
+            reader = new FileReader("file.txt");
 
-        File directory = new File("Reports");
+            if (!directory.exists()) {
+                directory.mkdir();
+            }
+            System.out.println("Directory Ready");
 
-        if (!directory.exists()) {
-            directory.mkdir();
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
-
-        System.out.println("Directory Ready");
+        finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            ;
+        }
     }
 }
